@@ -1,0 +1,116 @@
+.user_container{
+  /* margin-top: 8%; */
+  width: 37%;
+  margin: 8% auto auto auto;
+}
+
+.arrow_up{
+  position: fixed;
+  display: flex;
+  font-size: 15px;
+  align-self: flex-end;
+  background-color: white;
+  padding: 1%;
+  margin-top: 60vh;
+  margin-left:60% ;
+}
+
+.loading{
+  color: white;
+  margin: 70px auto auto auto;
+  font-size: 100px;
+}
+
+.user_container h1{
+  font-size: 50px;
+  color: violet;
+  margin-left: 15%;
+  text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.5);
+}
+
+.userandcontent{
+   margin-top: 5%;
+   border: 3px solid;
+   padding: 5%;
+   color: white;
+}
+
+
+.image_container img{
+  margin: 10px auto auto auto;
+  width: 450px;
+  height: 500px;
+}
+
+.image_container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.user img{
+  width: 5%;
+  margin: 0%;
+  padding: 0%;
+}
+
+.user{
+  display: flex;
+  cursor: pointer;
+  gap: 10px;
+}
+
+.filter{
+  /* margin-top: 20px; */
+  width: 90px;
+  margin: 30px auto auto auto;
+  font-size: 20px;
+
+}
+
+
+.popup{
+  /* width: fit-content; */
+  padding: 1%;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  margin: 1%;
+}
+
+.like_button_delete_update{
+  display: flex;
+  margin-top:10px;
+  justify-content: space-between;
+}
+
+.fa-heart {
+  color: #ccc; 
+  font-size:40px ;
+}
+
+.fa-heart.fas {
+  color: red;
+  font-size: 45px; 
+} 
+
+.profile_img{
+  font-size: 25px;
+}
+
+
+.delete{
+  padding: 10px;
+  font-size: 25px;
+  margin: auto 5px auto auto;
+  background-color: tomato;
+  border-radius: 10px;
+}
+
+.update{
+  padding: 10px;
+  font-size: 25px;
+  margin: auto auto auto 5px;
+  background-color: limegreen;
+  border-radius: 10px;
+}

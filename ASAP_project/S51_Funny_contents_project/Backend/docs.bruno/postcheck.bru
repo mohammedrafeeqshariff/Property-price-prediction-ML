@@ -1,0 +1,22 @@
+meta {
+  name: postcheck
+  type: http
+  seq: 5
+}
+
+post {
+  url: http://localhost:3000/POST
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+  "userid": 11,
+  "fname": "Rafeeq",
+  "lname": "shariff",
+  "country": "india",
+  "age": 18,
+  "typeofcontent": "photo"
+  }
+}

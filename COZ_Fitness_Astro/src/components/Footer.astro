@@ -1,0 +1,145 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="footer section-padding bg-light">
+  <div class="container footer-grid">
+    <div class="footer-info">
+      <a href="/" class="logo">COZ<span class="text-red">FITNESS</span></a>
+      <p>Premium gym in Ayappakkam, Ambattur. Where dedication meets state-of-the-art facilities and expert guidance.</p>
+      <div class="social-links mt-4">
+        <a href="https://www.instagram.com/coz_fitness" target="_blank" class="social-icon">IG</a>
+        <a href="#" class="social-icon">FB</a>
+        <a href="#" class="social-icon">YT</a>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/services">Our Services</a></li>
+        <li><a href="/pricing">Memberships</a></li>
+        <li><a href="/gallery">Gallery</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h3>Contact Us</h3>
+      <p>32, Ayyappakkam Main Rd, T.G, Anna Nagar, Ambattur, Chennai - 600053</p>
+      <p>Phone: <a href="tel:+919514286000" class="text-red">95142 86000</a></p>
+      <p>Email: info@cozfitness.com</p>
+    </div>
+
+    <div class="footer-hours">
+      <h3>Hours</h3>
+      <p>Mon-Sat: 5:00 AM - 11:00 PM</p>
+      <p>Sun: 5:00 AM - 7:00 PM</p>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>&copy; {year} COZ FITNESS. All rights reserved.</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #1a1a1a;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .footer h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #1a1a1a;
+    position: relative;
+    padding-bottom: 0.5rem;
+  }
+
+  .footer h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: var(--primary-color);
+  }
+
+  .footer p {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    color: #555;
+  }
+
+  .footer-links ul li {
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-links a { color: #555; }
+  .footer-links a:hover {
+    color: var(--primary-color);
+    padding-left: 5px;
+  }
+
+  .social-icon {
+    display: inline-flex;
+    width: 35px;
+    height: 35px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #555;
+    transition: var(--transition);
+  }
+
+  .social-icon:hover {
+    background: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+  }
+
+  .footer-bottom {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    text-align: center;
+    font-size: 0.9rem;
+    color: #888;
+  }
+
+  @media (max-width: 992px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      text-align: center;
+    }
+    .footer h3::after { left: 50%; transform: translateX(-50%); }
+    .social-links { justify-content: center; }
+  }
+
+  @media (max-width: 576px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    .logo { font-size: 1.75rem; }
+  }
+</style>

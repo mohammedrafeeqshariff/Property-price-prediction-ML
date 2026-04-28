@@ -1,0 +1,291 @@
+---
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/services', label: 'Services' },
+  { href: '/pricing', label: 'Pricing' },
+  { href: '/gallery', label: 'Gallery' },
+  { href: '/contact', label: 'Contact' },
+];
+
+const phoneNumber = "95142 86000";
+const phoneLink = "tel:+919514286000";
+---
+
+<header class="header">
+  <div class="container nav-container">
+    <div class="logo-group">
+      <a href="/" class="logo">
+        COZ<span class="text-red">FITNESS</span>
+      </a>
+    </div>
+    
+    <nav class="nav">
+      <ul class="nav-list">
+        {navLinks.map(link => (
+          <li><a href={link.href}>{link.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+    
+    <div class="header-actions">
+      <a href={phoneLink} class="call-btn">
+        <span class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        </span>
+        <span class="num">{phoneNumber}</span>
+      </a>
+      
+      <a href="/contact" class="btn btn-sm">Join Now</a>
+
+      <div class="mobile-toggle" id="mobile-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+        <span class="sun">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </span>
+        <span class="moon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Mobile toggle logic
+  const mobileToggle = document.getElementById('mobile-toggle');
+  const navList = document.querySelector('.nav-list');
+
+  mobileToggle?.addEventListener('click', () => {
+    navList?.classList.toggle('active');
+    mobileToggle?.classList.toggle('active');
+  });
+
+  // Theme toggle logic
+  const themeToggle = document.getElementById('theme-toggle');
+  
+  const handleToggleClick = () => {
+    const element = document.documentElement;
+    const isDark = element.getAttribute('data-theme') === 'dark';
+    element.setAttribute('data-theme', isDark ? 'light' : 'dark');
+  };
+
+  themeToggle?.addEventListener('click', handleToggleClick);
+</script>
+
+<style>
+  .header {
+    background-color: var(--header-bg);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+    transition: background-color 0.3s ease;
+  }
+
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .logo-group {
+    flex: 0 0 auto;
+    margin-right: 4rem; /* Initial space between logo and nav */
+  }
+
+  .logo {
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: -1px;
+    color: var(--text-color);
+  }
+
+  .nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav-list {
+    display: flex;
+    gap: 2.5rem;
+  }
+
+  .nav-list a {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    color: var(--text-color);
+    opacity: 0.8;
+    padding: 0.5rem 0;
+    position: relative;
+  }
+
+  .nav-list a:hover {
+    opacity: 1;
+    color: var(--primary-color);
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex: 0 0 auto;
+  }
+
+  .theme-toggle {
+    margin-left: 0.5rem;
+    font-size: 0; /* Remove potential text artifacts */
+    background: var(--accent-color);
+    border: 1px solid var(--border-color);
+    color: var(--primary-color);
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+  }
+
+  .theme-toggle:hover {
+    background: var(--primary-color);
+    color: #fff;
+    transform: translateY(-2px);
+  }
+  
+  .theme-toggle svg {
+    display: block;
+    width: 20px;
+    height: 20px;
+  }
+
+  .theme-toggle .sun { display: none; }
+  .theme-toggle .moon { display: block; }
+  
+  :global([data-theme="dark"]) .theme-toggle .sun { display: block; }
+  :global([data-theme="dark"]) .theme-toggle .moon { display: none; }
+
+  .call-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 800;
+  }
+
+  .call-btn .icon {
+    background: var(--primary-hover);
+    color: #ffffffff; /* Explicit white for the icon itself */
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 10px rgba(230, 57, 70, 0.3);
+  }
+
+  /* Fixed icon visibility if needed by forced color */
+  .call-btn:hover .icon {
+    background: var(--primary-hover);
+  }
+
+  .btn-sm {
+    padding: 0.75rem 1.75rem;
+    font-size: 0.85rem;
+    border-radius: 50px;
+  }
+
+  .mobile-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+  }
+
+  .mobile-toggle span {
+    width: 30px;
+    height: 3px;
+    background-color: var(--text-color);
+    display: block;
+    transition: var(--transition);
+    border-radius: 10px;
+  }
+
+  @media (max-width: 1100px) {
+    .num { display: none; }
+    .logo-group { margin-right: 2rem; }
+  }
+
+  @media (max-width: 850px) {
+    .nav { position: absolute; }
+    .nav-list {
+      display: none;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: var(--bg-color);
+      padding: 6rem 3rem;
+      gap: 2rem;
+      border-bottom: none;
+      box-shadow: none;
+      z-index: 999;
+      text-align: center;
+      justify-content: center;
+    }
+
+    .nav-list.active {
+      display: flex;
+    }
+
+    .nav-list a {
+      font-size: 1.5rem;
+    }
+
+    .mobile-toggle {
+      display: flex;
+      z-index: 1000;
+      margin-left: 0.5rem;
+      order: 3;
+    }
+
+    .header-actions {
+      gap: 0.75rem;
+    }
+
+    .theme-toggle {
+      order: 4; /* Rightmost */
+      margin-left: 0.75rem;
+      z-index: 1000;
+    }
+
+    .call-btn { order: 1; }
+    .btn-sm { order: 2; }
+
+    .mobile-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+    .mobile-toggle.active span:nth-child(2) { opacity: 0; }
+    .mobile-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
+  }
+
+  @media (max-width: 576px) {
+    .btn-sm { display: none; } /* Hide Join Now on very small screens to save space */
+    .call-btn .icon { width: 42px; height: 42px; }
+    .logo { font-size: 1.5rem; }
+  }
+</style>

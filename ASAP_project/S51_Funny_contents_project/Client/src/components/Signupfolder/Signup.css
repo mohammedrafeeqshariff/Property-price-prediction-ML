@@ -1,0 +1,14 @@
+.signup_submit{
+    font-size: 20px;
+    padding: 2%;
+    width: 30%;
+    margin: auto;
+    cursor: pointer;
+    background-color: skyblue;
+}
+.signup_submit:hover{
+    background-color: rgb(58, 115, 228);
+    color: white;
+    transition: 0.3s;
+    border-radius: 20px;
+}

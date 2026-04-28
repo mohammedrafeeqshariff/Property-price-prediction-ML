@@ -1,0 +1,14 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - ./temp_logs:/app/temp_logs
+    restart: always
+
+networks:
+  default:
+    name: log-analyzer-network

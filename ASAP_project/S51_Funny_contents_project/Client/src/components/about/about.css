@@ -1,0 +1,28 @@
+.about-page{
+    width: 50%;
+    text-align: left;
+    margin:10% auto auto 35% ;
+    /* border: 3px solid white; */
+    line-height: 65px;
+    user-select: none;
+}
+
+.about-page h1{
+    font-size: 80px;
+    color: pink;
+    margin: 20% 20% 3% 20%;
+    width: 100%;
+}
+
+.about-page h2{
+    font-size: 40px;
+    color: violet;
+
+}
+
+.about-page p{
+    font-size: 30px;
+    color: yellow;
+
+
+}

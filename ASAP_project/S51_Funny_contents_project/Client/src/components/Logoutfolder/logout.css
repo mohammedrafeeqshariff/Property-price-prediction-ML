@@ -1,0 +1,38 @@
+.logout_form_container{
+    width: 30%;
+    margin: 14% auto auto auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.logout_form_container h1{
+    font-size: 50px;
+}
+
+.logout_form{
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    font-size: 30px;
+
+}
+.logout_form input{
+    font-size: 30px;
+}
+
+.logout_submit{
+    font-size: 20px;
+    padding: 2%;
+    width: 30%;
+    margin: auto;
+    cursor: pointer;
+    background-color: skyblue;
+}
+.logout_submit:hover{
+    background-color: rgb(58, 115, 228);
+    color: white;
+    transition: 0.3s;
+    border-radius: 20px;
+}

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligent Log Analyzer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-hover: #4f46e5;
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --success: #22c55e;
+            --error: #ef4444;
+            --warning: #f59e0b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #818cf8 0%, #c084fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .upload-section {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2.5rem;
+        }
+
+        .file-input-wrapper {
+            position: relative;
+            width: 100%;
+            height: 15rem;
+            border: 2px dashed var(--border);
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+
+        .file-input-wrapper:hover {
+            border-color: var(--primary);
+        }
+
+        #fileInput {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .upload-msg {
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        button:hover {
+            background-color: var(--primary-hover);
+        }
+
+        button:disabled {
+            background-color: var(--border);
+            cursor: not-allowed;
+        }
+
+        .results-section {
+            display: none;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .result-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1rem;
+        }
+
+        .severity-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .severity-high { background-color: rgba(239, 68, 68, 0.2); color: var(--error); border: 1px solid var(--error); }
+        .severity-medium { background-color: rgba(245, 158, 11, 0.2); color: var(--warning); border: 1px solid var(--warning); }
+        .severity-low { background-color: rgba(34, 197, 94, 0.2); color: var(--success); border: 1px solid var(--success); }
+
+        .report-section {
+            margin-bottom: 2rem;
+        }
+
+        .report-section h3 {
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+            color: var(--primary);
+        }
+
+        .report-content {
+            background-color: rgba(15, 23, 42, 0.5);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+
+        ul {
+            list-style-position: inside;
+            padding-left: 0.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .loader {
+            display: none;
+            width: 24px;
+            height: 24px;
+            border: 3px solid #FFF;
+            border-bottom-color: transparent;
+            border-radius: 50%;
+            animation: rotation 1s linear infinite;
+        }
+
+        @keyframes rotation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .error-toast {
+            display: none;
+            background-color: var(--error);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Intelligent Log Analyzer</h1>
+            <p>Upload your system logs and get AI-powered debugging insights instantly.</p>
+        </header>
+
+        <div id="errorToast" class="error-toast"></div>
+
+        <section class="upload-section">
+            <div class="file-input-wrapper">
+                <input type="file" id="fileInput" accept=".log,.txt">
+                <div class="upload-msg" id="uploadMsg">
+                    <p>Click or drag & drop log file</p>
+                    <p style="font-size: 0.8rem; margin-top: 0.5rem;">Accepted formats: .log, .txt</p>
+                </div>
+            </div>
+            <button id="analyzeBtn">
+                <span class="loader" id="loader"></span>
+                <span id="btnText">Analyze Log File</span>
+            </button>
+        </section>
+
+        <section id="resultsSection" class="results-section">
+            <div class="result-header">
+                <h2>Debugging Summary</h2>
+                <div id="severityBadge" class="severity-badge">High</div>
+            </div>
+
+            <div class="report-section">
+                <h3>Root Cause Analysis</h3>
+                <div class="report-content" id="rootCause"></div>
+            </div>
+
+            <div class="report-section">
+                <h3>Recommended Fix</h3>
+                <div class="report-content" id="recommendedFix"></div>
+            </div>
+
+            <div class="report-section">
+                <h3>Debugging Steps</h3>
+                <div class="report-content">
+                    <ul id="debugSteps"></ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        const fileInput = document.getElementById('fileInput');
+        const analyzeBtn = document.getElementById('analyzeBtn');
+        const uploadMsg = document.getElementById('uploadMsg');
+        const resultsSection = document.getElementById('resultsSection');
+        const loader = document.getElementById('loader');
+        const btnText = document.getElementById('btnText');
+        const errorToast = document.getElementById('errorToast');
+
+        fileInput.addEventListener('change', () => {
+            if (fileInput.files.length > 0) {
+                uploadMsg.innerHTML = `<p style="color: var(--success); font-weight: 500;">Selected: ${fileInput.files[0].name}</p>`;
+            }
+        });
+
+        const showError = (msg) => {
+            errorToast.textContent = msg;
+            errorToast.style.display = 'block';
+            setTimeout(() => { errorToast.style.display = 'none'; }, 5000);
+        };
+
+        analyzeBtn.addEventListener('click', async () => {
+            if (fileInput.files.length === 0) {
+                showError("Please select a log file first.");
+                return;
+            }
+
+            const file = fileInput.files[0];
+            const formData = new FormData();
+            formData.append('file', file);
+
+            // UI State: Loading
+            analyzeBtn.disabled = true;
+            loader.style.display = 'inline-block';
+            btnText.textContent = 'Processing...';
+            resultsSection.style.display = 'none';
+
+            try {
+                // 1. Upload
+                const uploadRes = await fetch('/upload-log', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (!uploadRes.ok) throw new Error("Failed to upload log file.");
+                const { log_id } = await uploadRes.json();
+
+                // 2. Analyze
+                btnText.textContent = 'Analyzing with AI...';
+                const analyzeRes = await fetch(`/analyze-log/${log_id}`, {
+                    method: 'POST'
+                });
+
+                if (!analyzeRes.ok) throw new Error("Failed to analyze log file.");
+                const report = await analyzeRes.json();
+
+                // 3. Display Results
+                displayReport(report);
+
+            } catch (err) {
+                showError(err.message);
+            } finally {
+                analyzeBtn.disabled = false;
+                loader.style.display = 'none';
+                btnText.textContent = 'Analyze Log File';
+            }
+        });
+
+        function displayReport(report) {
+            document.getElementById('rootCause').textContent = report.root_cause;
+            document.getElementById('recommendedFix').textContent = report.recommended_fix;
+            
+            const stepsList = document.getElementById('debugSteps');
+            stepsList.innerHTML = '';
+            report.debug_steps.forEach(step => {
+                const li = document.createElement('li');
+                li.textContent = step;
+                stepsList.appendChild(li);
+            });
+
+            const badge = document.getElementById('severityBadge');
+            badge.textContent = report.severity;
+            badge.className = 'severity-badge ' + (
+                report.severity.toLowerCase().includes('high') ? 'severity-high' :
+                report.severity.toLowerCase().includes('low') ? 'severity-low' : 'severity-medium'
+            );
+
+            resultsSection.style.display = 'block';
+            resultsSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

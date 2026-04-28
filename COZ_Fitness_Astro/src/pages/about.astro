@@ -1,0 +1,186 @@
+---
+import Layout from '../layouts/Layout.astro';
+const coachImg = "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=1470";
+---
+
+<Layout 
+	title="Top Gym Near Me in Ambattur | About COZ Fitness"
+	description="Discover the top gym near you in Ambattur. COZ Fitness offers a premium environment, certified trainers, and world-class equipment."
+	keywords="gym near me, best gym Ambattur, premium fitness center, professional trainers Chennai"
+>
+	<section class="page-header">
+		<div class="container animate text-center">
+			<span class="tag">Since 2020</span>
+			<h1 class="text-white mt-4">Built for <span class="text-red">Excellence</span></h1>
+			<p class="text-white max-width-800 mx-auto">The premier destination for high-performance training in North Chennai.</p>
+		</div>
+	</section>
+
+	<section class="section-padding">
+		<div class="container about-grid">
+			<div class="about-content">
+				<span class="tag">Our Heritage</span>
+				<h2 class="mt-4">Where Dedication Meets State-of-the-Art</h2>
+				<p>Finding a <strong>gym near me</strong> in the Ambattur region shouldn't be a compromise. COZ Fitness was established with a singular goal: to create a training facility that rivals global standards right here in Ayyappakkam.</p>
+				<p>We serve a diverse community of fitness enthusiasts from Ambattur and Anna Nagar, providing an elite space where technology and human expertise converge. Our facility is designed to be clean, motivating, and highly efficient for every type of workout.</p>
+				
+				<div class="mission-box mt-5">
+					<h3>Our Commitment</h3>
+					<p>We are committed to providing the best fitness experience through scientifically proven training methods and the most advanced equipment available in the industry.</p>
+				</div>
+			</div>
+			<div class="about-image">
+				<img src={coachImg} alt="Professional training at COZ Fitness" class="shadow-lg hover-scale" />
+			</div>
+		</div>
+	</section>
+
+	<section class="section-padding bg-light">
+		<div class="container text-center">
+			<span class="tag">The Edge</span>
+			<h2 class="mt-4">Why COZ Stands Out</h2>
+			<div class="features-grid mt-5">
+				<div class="feature-card">
+					<div class="f-icon-box">🏆</div>
+					<h4>Elite Facility</h4>
+					<p>An expansive, climate-controlled arena featuring the best Jerai Fitness machinery and premium infrastructure.</p>
+				</div>
+				<div class="feature-card">
+					<div class="f-icon-box">👨‍🏫</div>
+					<h4>Certified Mastery</h4>
+					<p>Our coaches aren't just trainers; they are certified professionals dedicated to your individual transformation journey.</p>
+				</div>
+				<div class="feature-card">
+					<div class="f-icon-box">⌚</div>
+					<h4>Prime Accessibility</h4>
+					<p>Open daily from 5:00 AM, we fit perfectly into the lifestyle of busy professionals and student athletes.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="seo-long-form">
+                <h2>The Premier Fitness Destination in Ambattur</h2>
+                <p>When you search for the **best gym in Ambattur**, you are looking for more than just equipment. You are looking for an environment that fosters growth. COZ Fitness is built on this foundation. Our members come from all walks of life, from competitive athletes to busy corporate professionals, all sharing a common goal of self-improvement.</p>
+                
+                <div class="spacer-80"></div>
+
+                <h3>Advanced Bio-mechanics with Jerai Fitness</h3>
+                <p>We don't settle for average equipment. Our facility is exclusively equipped with **Jerai Fitness** machines. These are bio-mechanically engineered to ensure maximum muscle activation with minimum joint stress. This technical superiority is why we are considered the top fitness center near Ayappakkam and Ambattur.</p>
+            </div>
+        </div>
+    </section>
+
+	<section class="section-padding bg-red text-center">
+		<div class="container">
+			<h2 class="text-white">Experience the COZ Standard</h2>
+			<p class="text-white opacity-8 mb-4">Book a tour today and see why we are Ambattur's #1 choice.</p>
+			<a href="/contact" class="btn btn-white">Request a Tour</a>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.page-header {
+		height: 60vh;
+		background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=1470') center/cover;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+    .page-header h1 { font-size: 4.5rem; text-shadow: 0 4px 15px rgba(0,0,0,0.4); }
+
+	.about-grid {
+		display: grid;
+		grid-template-columns: 1.2fr 0.8fr;
+		gap: 6rem;
+		align-items: center;
+	}
+
+	.mission-box {
+		padding: 3rem;
+		background: var(--accent-color);
+		border-left: 6px solid var(--primary-color);
+		border-radius: 20px;
+	}
+
+    .mission-box h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary-color); }
+    .mission-box p { margin-bottom: 0; color: var(--text-color); font-weight: 500; }
+
+	.features-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 3rem;
+	}
+
+	.feature-card {
+		background: var(--bg-color);
+		padding: 4.5rem 2.5rem;
+		border-radius: 30px;
+		transition: var(--transition);
+		border: 1px solid var(--border-color);
+		box-shadow: var(--shadow);
+	}
+
+	.feature-card:hover {
+		box-shadow: var(--shadow-lg);
+		transform: translateY(-10px);
+		border-color: var(--primary-color);
+	}
+
+	.f-icon-box {
+		font-size: 3.5rem;
+		margin-bottom: 2.5rem;
+        background: var(--accent-color);
+        width: 100px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin-left: auto;
+        margin-right: auto;
+	}
+
+	.hover-scale { transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1); }
+	.hover-scale:hover { transform: scale(1.05); }
+
+    .tag {
+		background: var(--accent-color);
+		color: var(--primary-color);
+		padding: 0.6rem 1.2rem;
+		border-radius: 8px;
+		font-weight: 800;
+		text-transform: uppercase;
+		font-size: 0.8rem;
+		letter-spacing: 1.5px;
+	}
+
+    .seo-long-form {
+        max-width: 950px;
+        margin: 0 auto;
+    }
+
+    .seo-long-form p { line-height: 2; margin-bottom: 2rem; font-size: 1.25rem; }
+
+    .spacer-80 { height: 80px; }
+    .mt-4 { margin-top: 2rem; }
+    .mt-5 { margin-top: 3rem; }
+    .opacity-8 { opacity: 0.8; }
+
+	@media (max-width: 992px) {
+		.page-header { height: auto; padding: 10rem 0 6rem; text-align: center; }
+        .page-header h1 { font-size: 3rem; }
+		.about-grid { grid-template-columns: 1fr; gap: 4rem; text-align: center; }
+		.features-grid { grid-template-columns: 1fr; gap: 2rem; }
+        .mission-box { text-align: left; }
+	}
+
+    @media (max-width: 576px) {
+        .page-header h1 { font-size: 2.5rem; }
+        .f-icon-box { width: 80px; height: 80px; font-size: 2.5rem; }
+    }
+</style>

@@ -1,0 +1,238 @@
+---
+import Layout from '../layouts/Layout.astro';
+const trainingImg = "https://images.unsplash.com/photo-1541534741688-6078c64b59d3?auto=format&fit=crop&q=80&w=1470";
+const transformationImg = "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=1470";
+---
+
+<Layout 
+	title="Professional Personal Training Ambattur | Expert Coaches | Services"
+	description="Transform your life with professional personal training in Ambattur. We offer weight loss programs and specialized transformations at COZ Fitness."
+	keywords="personal training ambattur, weight loss program chennai, strength and conditioning, transformation program"
+>
+	<section class="page-header">
+		<div class="container animate text-center">
+			<span class="tag">Engineered Results</span>
+			<h1 class="text-white mt-4">Premium Training <span class="text-red">Programs</span></h1>
+			<p class="text-white opacity-8 max-width-800 mx-auto">Science-based training methodologies delivered by Chennai's top fitness experts.</p>
+		</div>
+	</section>
+
+	<section class="section-padding">
+		<div class="container">
+			<div class="intro-text text-center max-width-800 mx-auto">
+				<span class="tag">The Blueprint</span>
+				<h2 class="mt-4">Our Scientific Approach</h2>
+				<p class="intro-desc">We don't believe in generic workouts. Every program at COZ Fitness is designed by certified professionals using bio-mechanically superior Jerai equipment to ensure your time in the gym is effective and safe.</p>
+			</div>
+
+			<div class="services-list mt-5">
+				<div class="service-row">
+					<div class="service-img-box">
+						<img src={trainingImg} alt="Personal training session in Ambattur" class="shadow-lg hover-scale" />
+					</div>
+					<div class="service-info-box">
+						<span class="num text-red">01</span>
+						<h3>Resistance & Strength Training</h3>
+						<p>Build lean muscle and functional power. Our resistance protocols focus on progressive overload and proper form using Jerai's precision machines. Whether you're a bodybuilder or looking for basic toning, we have the setup for you.</p>
+						<ul class="check-list mt-4">
+							<li>Muscle Hypertrophy Focus</li>
+							<li>Functional Movement Patterns</li>
+							<li>Jerai Precision Equipment</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="service-row reverse">
+					<div class="service-img-box">
+						<img src={transformationImg} alt="Body transformation results" class="shadow-lg hover-scale" />
+					</div>
+					<div class="service-info-box">
+						<span class="num text-red">02</span>
+						<h3>90-Day Transformation Program</h3>
+						<p>Our signature <strong>weight loss program in Chennai</strong>. We combine intense training with strict nutritional coaching and accountability check-ins to deliver dramatic results in just 3 months.</p>
+						<ul class="check-list mt-4">
+							<li>Custom Nutrition Mapping</li>
+							<li>Weekly Progress Audits</li>
+							<li>1-on-1 Lifestyle Coaching</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section-padding bg-light">
+		<div class="container">
+			<div class="text-center mb-5">
+				<span class="tag">Specialized Coaching</span>
+				<h2 class="mt-4">More Ways to Get Fit</h2>
+			</div>
+			<div class="coaching-grid mt-5">
+				<div class="coaching-card">
+					<div class="c-icon-box">🔥</div>
+					<h4>HIIT & Cardio</h4>
+					<p>High-energy sessions designed to maximize calorie burn and improve cardiovascular health in record time.</p>
+				</div>
+				<div class="coaching-card">
+					<div class="c-icon-box">⚡</div>
+					<h4>Strength & Conditioning</h4>
+					<p>Athletic performance training focusing on explosive power, agility, and functional movement.</p>
+				</div>
+				<div class="coaching-card">
+					<div class="c-icon-box">🧘</div>
+					<h4>Mobility & Recovery</h4>
+					<p>Essential functional training to improve range of motion and ensure long-term joint health.</p>
+				</div>
+				<div class="coaching-card">
+					<div class="c-icon-box">🥗</div>
+					<h4>Dietary Consulting</h4>
+					<p>Personalized macro-balanced meal plans tailored to support your specific weight loss or muscle gain goals.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+    <section class="section-padding">
+        <div class="container seo-long-form">
+            <h2>The Science of Results: Personal Training in Ambattur</h2>
+            <p>One of the largest hurdles to fitness success is the lack of a structured plan. At COZ Fitness, our **personal training in Ambattur** is built on the pillars of consistency and expertise. Our coaches work with you to break through plateaus and ensure you are training at the right intensity for your specific goals.</p>
+            
+            <div class="spacer-80"></div>
+
+            <h3>Targeted Weight Loss Programs in Chennai</h3>
+            <p>Weight loss is 30% training and 70% nutrition. Our **weight loss program in Chennai** addresses the complexities of the local lifestyle. We provide realistic, sustainable dietary advice that works alongside our high-energy training sessions at our facility on Ayyappakkam Main Road.</p>
+        </div>
+    </section>
+
+	<section class="section-padding bg-red text-center">
+		<div class="container">
+			<h2 class="text-white">Ready for Your First Session?</h2>
+			<p class="text-white opacity-8 mb-4">Chat with our experts today and start your transformation.</p>
+			<a href="https://wa.me/919514286000" class="btn btn-white">Start My Consultation</a>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.page-header {
+		height: 60vh;
+		background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1541534741688-6078c64b59d3?auto=format&fit=crop&q=80&w=1470') center/cover;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+    .page-header h1 { font-size: 4.5rem; text-shadow: 0 4px 15px rgba(0,0,0,0.4); }
+
+    .tag {
+		background: var(--accent-color);
+		color: var(--primary-color);
+		padding: 0.6rem 1.2rem;
+		border-radius: 8px;
+		font-weight: 800;
+		text-transform: uppercase;
+		font-size: 0.8rem;
+		letter-spacing: 1.5px;
+	}
+
+    .intro-desc { font-size: 1.3rem; margin-top: 1.5rem; }
+
+	.services-list {
+		display: flex;
+		flex-direction: column;
+		gap: 12rem;
+	}
+
+	.service-row {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 8rem;
+		align-items: center;
+	}
+
+	.service-row.reverse { direction: rtl; }
+	.service-row.reverse .service-info-box { direction: ltr; }
+
+	.num {
+		font-size: 5rem;
+		font-weight: 950;
+		line-height: 1;
+		margin-bottom: 2rem;
+		display: block;
+        opacity: 0.4;
+	}
+    
+    :global([data-theme="dark"]) .num { opacity: 0.6; }
+
+	.check-list li {
+		margin-bottom: 1.5rem;
+		padding-left: 3rem;
+		position: relative;
+		font-weight: 700;
+        font-size: 1.15rem;
+	}
+
+	.check-list li::before {
+		content: '✔';
+		position: absolute;
+		left: 0;
+		color: var(--primary-color);
+        font-size: 1.5rem;
+	}
+
+	.coaching-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 3.5rem;
+	}
+
+	.coaching-card {
+		background: var(--bg-color);
+		padding: 4.5rem;
+		border-radius: 30px;
+		border: 1px solid var(--border-color);
+		transition: var(--transition);
+        box-shadow: var(--shadow);
+	}
+
+	.coaching-card:hover {
+		transform: translateY(-10px);
+		box-shadow: var(--shadow-lg);
+		border-color: var(--primary-color);
+	}
+
+	.c-icon-box {
+		font-size: 3.5rem;
+		margin-bottom: 2.5rem;
+        background: var(--accent-color);
+        width: 100px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+	}
+
+    .seo-long-form p { font-size: 1.25rem; line-height: 2; margin-bottom: 2rem; }
+    .spacer-80 { height: 80px; }
+    .mt-4 { margin-top: 2rem; }
+    .mt-5 { margin-top: 4rem; }
+    .opacity-8 { opacity: 0.8; }
+    .hover-scale { transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1); }
+    .hover-scale:hover { transform: scale(1.05); }
+
+	@media (max-width: 992px) {
+		.page-header { height: auto; padding: 10rem 0 6rem; text-align: center; }
+        .page-header h1 { font-size: 3.5rem; }
+		.service-row { grid-template-columns: 1fr; gap: 4rem; text-align: center; }
+		.service-row.reverse .service-info-box { order: 1; }
+		.service-row.reverse .service-img-box { order: 2; }
+        .check-list { text-align: left; max-width: 450px; margin-left: auto; margin-right: auto; }
+		.coaching-grid { grid-template-columns: 1fr; }
+	}
+
+    @media (max-width: 576px) {
+        .page-header h1 { font-size: 2.75rem; }
+        .num { font-size: 3.5rem; }
+    }
+</style>

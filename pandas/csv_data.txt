@@ -1,0 +1,21 @@
+ID,Name,Age,Department,Salary,Joining_Date
+1,John Doe,28,IT,50000,2020-01-15
+2,Jane Smith,34,HR,60000,2018-03-22
+3,Emily Davis,29,Finance,55000,2019-07-10
+4,Michael Brown,45,IT,75000,2015-11-01
+5,Sarah Wilson,31,Marketing,48000,2021-06-18
+6,David Johnson,38,Finance,67000,2017-09-12
+7,Laura Lee,26,HR,52000,2022-02-25
+8,James White,41,IT,80000,2014-05-30
+9,Linda Harris,30,Marketing,47000,2020-08-14
+10,Robert Clark,36,Finance,62000,2016-12-05
+11,Patricia Lewis,27,HR,51000,2021-03-19
+12,Charles Walker,50,IT,90000,2010-10-10
+13,Barbara Hall,33,Marketing,49000,2019-04-23
+14,Daniel Allen,40,Finance,71000,2016-07-08
+15,Jennifer Young,25,HR,50000,2022-11-11
+16,Matthew King,39,IT,78000,2015-01-20
+17,Elizabeth Scott,32,Marketing,46000,2020-09-30
+18,Anthony Wright,44,Finance,73000,2013-03-15
+19,Jessica Green,28,HR,53000,2021-12-01
+20,Thomas Adams,37,IT,77000,2016-06-25

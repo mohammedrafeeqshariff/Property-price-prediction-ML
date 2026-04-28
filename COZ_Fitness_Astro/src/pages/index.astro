@@ -1,0 +1,264 @@
+---
+import Layout from '../layouts/Layout.astro';
+const heroImg = "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&q=80&w=1470";
+const gymImg = "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&q=80&w=1470";
+---
+
+<Layout 
+	title="Best Gym in Ambattur | Premium Fitness & Transformations | COZ FITNESS"
+	description="Transform your body at COZ FITNESS, the best gym in Ambattur. Premium equipment, expert trainers, and results-driven weight loss programs. Join now!"
+	keywords="best gym in ambattur, gym near me, personal training ambattur, fitness center Chennai, weight loss program"
+>
+	<!-- Hero Section -->
+	<section class="hero">
+		<div class="container hero-content animate">
+			<span class="tag">Premium Fitness Excellence</span>
+			<h1>The Best Gym in <span class="text-red">Ambattur</span></h1>
+			<p class="hero-desc">Experience world-class training with state-of-the-art Jerai equipment, certified coaches, and a community built for results.</p>
+			<div class="hero-btns">
+				<a href="/contact" class="btn">Join COZ Today</a>
+				<a href="/services" class="btn btn-outline">Our Programs</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Intro Section -->
+	<section class="section-padding">
+		<div class="container text-center">
+			<span class="tag">Why COZ Fitness?</span>
+			<h2 class="mt-4">Your Transformation Starts Here</h2>
+			<p class="max-width-800 mx-auto intro-desc">Looking for the <strong>best gym in Ambattur</strong>? COZ Fitness provides more than just a place to workout. We offer a high-performance environment strategically located in Ayappakkam, equipped with the finest Jerai Fitness machines.</p>
+			
+			<div class="stats-grid mt-5">
+				<div class="stat-card">
+					<span class="stat-num text-red">500+</span>
+					<span class="stat-label">Member Transformations</span>
+				</div>
+				<div class="stat-card">
+					<span class="stat-num text-red">10+</span>
+					<span class="stat-label">Certified Experts</span>
+				</div>
+				<div class="stat-card">
+					<span class="stat-num text-red">Elite</span>
+					<span class="stat-label">Jerai Equipment</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Content Block (SEO) -->
+	<section class="section-padding bg-light">
+		<div class="container content-grid">
+			<div class="content-text">
+				<span class="tag">Expert Training</span>
+				<h2 class="mt-4">Elite Training Philosophy</h2>
+				<p>At COZ Fitness, we bridge the gap between science and training. Our approach to <strong>personal training in Ambattur</strong> is built on functional strength and metabolic conditioning. Whether you're a beginner or a veteran athlete, our facility is designed to push your limits.</p>
+				<p>We understand that every body is unique. Our certified trainers provide customized nutritional guidance and periodized workout plans to ensure every minute in the gym leads to progress.</p>
+				<ul class="feature-list mt-4">
+					<li>Bio-mechanically precise Jerai machines</li>
+					<li>Specialized fat loss and muscle gain programs</li>
+					<li>Climate-controlled, hygienic environment</li>
+					<li>Premium Facility with 5000+ sq ft</li>
+				</ul>
+                <a href="/about" class="btn btn-sm mt-5">Discover More</a>
+			</div>
+			<div class="content-image">
+				<img src={gymImg} alt="Best weight training gym in Ambattur" class="shadow-lg" />
+			</div>
+		</div>
+	</section>
+
+	<!-- FAQ Section -->
+	<section class="section-padding">
+		<div class="container">
+			<div class="text-center mb-5">
+				<span class="tag">Help Center</span>
+				<h2 class="mt-4">Frequently Asked Questions</h2>
+			</div>
+			<div class="faq-list max-width-800 mx-auto">
+				<details open>
+					<summary>What are the gym timings?</summary>
+					<p>We are open <strong>Monday to Saturday from 5:00 AM to 11:00 PM</strong>, and <strong>Sundays from 5:00 AM to 7:00 PM</strong> to accommodate all schedules.</p>
+				</details>
+				<details>
+					<summary>Do you offer personal training?</summary>
+					<p>Yes, we offer the most comprehensive <strong>personal training in Ambattur</strong> with certified experts who specialize in weight loss and muscle gain.</p>
+				</details>
+				<details>
+					<summary>What is the annual membership cost?</summary>
+					<p>Our annual memberships start at ₹8,888, offering the absolute best value for premium fitness in the Chennai region.</p>
+				</details>
+			</div>
+		</div>
+	</section>
+
+	<!-- Call to Action -->
+	<section class="section-padding bg-red text-center">
+		<div class="container animate">
+			<h2 class="text-white">Ready to Be Stronger Than Yesterday?</h2>
+			<p class="mb-5 text-white opacity-9">Join the best gym in Ambattur and start your journey today with a free consultation.</p>
+			<a href="https://wa.me/919514286000" class="btn btn-white">WhatsApp Us Now</a>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.hero {
+		height: 90vh;
+		background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&q=80&w=1470') center/cover no-repeat;
+		display: flex;
+		align-items: center;
+	}
+
+	.hero-content {
+		max-width: 850px;
+	}
+
+	.hero h1 {
+		font-size: 5rem;
+		line-height: 1.1;
+		margin: 2rem 0;
+		color: #ffffff;
+        text-shadow: 2px 2px 20px rgba(0,0,0,0.3);
+	}
+
+	.hero-desc {
+		font-size: 1.5rem;
+		margin-bottom: 3.5rem;
+		color: #ffffff;
+        opacity: 0.95;
+        font-weight: 500;
+        max-width: 700px;
+	}
+
+	.hero-btns {
+		display: flex;
+		gap: 2rem;
+	}
+
+	.tag {
+		background: var(--accent-color);
+		color: var(--primary-color);
+		padding: 0.6rem 1.2rem;
+		border-radius: 8px;
+		font-weight: 800;
+		text-transform: uppercase;
+		font-size: 0.8rem;
+		letter-spacing: 1.5px;
+	}
+
+	.intro-desc {
+		font-size: 1.25rem;
+		line-height: 1.8;
+	}
+
+	.stats-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 3rem;
+	}
+
+	.stat-card {
+		padding: 4rem 2rem;
+		background: var(--secondary-bg);
+		border-radius: 30px;
+		box-shadow: var(--shadow);
+		transition: var(--transition);
+		border: 1px solid var(--border-color);
+	}
+
+	.stat-card:hover {
+		transform: translateY(-15px);
+		border-color: var(--primary-color);
+	}
+
+	.stat-num {
+		display: block;
+		font-size: 4rem;
+		font-weight: 950;
+		line-height: 1;
+		margin-bottom: 1rem;
+	}
+
+	.stat-label {
+		display: block;
+		font-weight: 800;
+		font-size: 0.9rem;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+
+	.content-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 6rem;
+		align-items: center;
+	}
+
+	.feature-list li {
+		margin-bottom: 1.2rem;
+		padding-left: 2.5rem;
+		position: relative;
+		font-weight: 700;
+	}
+
+	.feature-list li::before {
+		content: '✔';
+		position: absolute;
+		left: 0;
+		color: var(--primary-color);
+		font-size: 1.5rem;
+	}
+
+	.faq-list details {
+		background: var(--bg-color);
+		margin-bottom: 1.5rem;
+		padding: 2.5rem;
+		border-radius: 20px;
+		box-shadow: var(--shadow);
+		cursor: pointer;
+		border: 1px solid var(--border-color);
+	}
+
+	.faq-list summary {
+		font-weight: 900;
+		font-size: 1.25rem;
+		list-style: none;
+		position: relative;
+		padding-right: 2rem;
+	}
+
+	.faq-list summary::after {
+		content: '↓';
+		position: absolute;
+		right: 0;
+		color: var(--primary-color);
+		transition: transform 0.3s ease;
+	}
+
+	.faq-list details[open] summary::after {
+		transform: rotate(180deg);
+	}
+
+	.opacity-9 { opacity: 0.9; }
+    .mt-4 { margin-top: 2rem; }
+    .mt-5 { margin-top: 4rem; }
+
+	@media (max-width: 992px) {
+		.hero { height: auto; padding: 12rem 0 8rem; text-align: center; }
+		.hero-content { margin: 0 auto; }
+		.hero h1 { font-size: 3.5rem; }
+		.hero-btns { justify-content: center; }
+		.hero-desc { margin-left: auto; margin-right: auto; }
+		.content-grid { grid-template-columns: 1fr; gap: 4rem; text-align: center; }
+        .feature-list { text-align: left; max-width: 500px; margin-left: auto; margin-right: auto; }
+		.stats-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+	}
+
+    @media (max-width: 576px) {
+        .hero h1 { font-size: 2.75rem; }
+        .hero-btns { flex-direction: column; width: 100%; }
+        .hero-btns .btn { width: 100%; }
+        .stat-num { font-size: 3rem; }
+    }
+</style>

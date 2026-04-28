@@ -1,0 +1,17 @@
+meta {
+  name: patchcheck
+  type: http
+  seq: 6
+}
+
+patch {
+  url: http://localhost:3000/PATCH/11
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "fname": "Mohammed"
+  }
+}

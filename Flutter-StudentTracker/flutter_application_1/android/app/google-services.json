@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "879070946633",
+    "project_id": "student-performance-trac-422b3",
+    "storage_bucket": "student-performance-trac-422b3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:879070946633:android:e96ebd5a2731d375e7e698",
+        "android_client_info": {
+          "package_name": "com.student_tracker.flutter_application_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "879070946633-5gf2gdp20078edboubrrclj5hgt15u64.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSRm7oehuj_3FU9LFviaZgg5K_wDPxaYU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "879070946633-5gf2gdp20078edboubrrclj5hgt15u64.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

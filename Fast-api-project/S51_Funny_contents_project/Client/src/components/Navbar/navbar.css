@@ -1,0 +1,63 @@
+.buttons{
+    display: flex;
+    background-color:rgb(250, 154, 170);
+    /* background-image: url(https://wallup.net/wp-content/uploads/2016/03/09/164572-digital_art-blue-leaves-pattern-texture-simple-artwork-nature.jpg); */
+    gap: 100px;
+    justify-content: end;
+    padding: 30px;
+}
+
+  
+.buttons h2 {
+position: relative;
+padding: 5px;
+border-radius: 10px;
+color: rgb(132, 0, 255);
+display: flex;
+text-align: center;
+
+}
+
+.buttons h2::before {
+content: '';
+position: absolute;
+bottom: 0;
+left: 0;
+width: 0;
+height: 3px;
+background-color: rgb(255, 255, 255); 
+transition:0.5s ; 
+}
+
+.buttons h2:hover::before {
+width: 100%;
+}
+
+.nav_container{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.logo{
+    position: absolute;
+    width: 200px;
+    /* top: 5%; */
+    left: 1%;
+}
+
+.home_icon{
+  margin-right: 7px;
+}
+
+.upload_icon{
+  color: rgb(181, 102, 255);
+  font-size: 30px;
+  margin-left: 8px;
+}
+
+.logo_icon{
+  width: 50px;
+}

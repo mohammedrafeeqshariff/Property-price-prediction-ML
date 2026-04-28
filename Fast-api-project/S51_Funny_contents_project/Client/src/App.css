@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Comfortaa:wght@300..700&family=Concert+One&family=DM+Sans:opsz,wght@9..40,700&family=Hind:wght@300;400;500;600;700&family=Inter:wght@100..900&family=Madimi+One&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Patua+One&display=swap');
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: "Concert One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.active{
+    color: white;
+}
+
+body{
+    background-color: black;
+    color: white;    
+}

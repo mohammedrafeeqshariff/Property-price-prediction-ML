@@ -1,0 +1,182 @@
+---
+import Layout from '../layouts/Layout.astro';
+const g1 = "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&q=80&w=1470";
+const g2 = "https://images.unsplash.com/photo-1593079831268-3381b0db4a77?auto=format&fit=crop&q=80&w=1470";
+const g3 = "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=1470";
+const g4 = "https://images.unsplash.com/photo-1574673139082-13d8d3898ffb?auto=format&fit=crop&q=80&w=1470";
+const g5 = "https://images.unsplash.com/photo-1590239062391-456345632af0?auto=format&fit=crop&q=80&w=1470"; // New Turf Image
+const g6 = "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=80&w=1470";
+---
+
+<Layout 
+	title="Luxury Gym Facilities Ambattur | Virtual Tour | Gallery"
+	description="Experience the luxury gym facilities at COZ Fitness Ambattur. View our state-of-the-art Jerai equipment and premium training environment."
+	keywords="luxury gym facilities, gym gallery Ambattur, Jerai fitness equipment photos, premium gym interior"
+>
+	<section class="page-header">
+		<div class="container animate text-center">
+			<span class="tag">Visual Experience</span>
+			<h1 class="text-white mt-4">The <span class="text-red">COZ</span> Arena</h1>
+			<p class="text-white opacity-9 max-width-800 mx-auto">Explore our high-performance facility designed for elite transformations.</p>
+		</div>
+	</section>
+
+	<section class="section-padding">
+		<div class="container">
+			<div class="intro-text text-center max-width-800 mx-auto">
+				<span class="tag">Uncompromising Quality</span>
+				<h2 class="mt-4">World-Class Training Environment</h2>
+				<p class="intro-desc">Our facility is more than just a gym; it's a meticulously designed arena where every piece of equipment and every corner is optimized for performance, hygiene, and member experience.</p>
+			</div>
+
+			<div class="gallery-masonry mt-5">
+				<div class="gallery-card">
+					<img src={g1} alt="Gym environment in Ambattur" />
+					<div class="overlay">
+						<h3>Strength Arena</h3>
+					</div>
+				</div>
+				<div class="gallery-card">
+					<img src={g2} alt="Jerai Fitness Equipment" />
+					<div class="overlay">
+						<h3>Jerai Precision</h3>
+					</div>
+				</div>
+				<div class="gallery-card">
+					<img src={g3} alt="Weight training zone" />
+					<div class="overlay">
+						<h3>Resistance Zone</h3>
+					</div>
+				</div>
+				<div class="gallery-card">
+					<img src={g4} alt="Cardio suite - Advanced treadmills" />
+					<div class="overlay">
+						<h3>Cardio Suite</h3>
+					</div>
+				</div>
+				<div class="gallery-card">
+					<img src={g5} alt="Functional Training and Turf Area" />
+					<div class="overlay">
+						<h3>Functional Turf</h3>
+					</div>
+				</div>
+				<div class="gallery-card">
+					<img src={g6} alt="Personal Training and Coaching" />
+					<div class="overlay">
+						<h3>Elite Coaching</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section-padding bg-light">
+		<div class="container seo-long-form">
+			<h2>Defining Luxury Gym Facilities in Ambattur</h2>
+			<p>A high-end gym experience is defined by details. At COZ Fitness, we focus on providing **luxury gym facilities in Ambattur** that go beyond just aesthetics. Our spacing, lighting, and ventilation are all balanced to maintain a high-energy yet comfortable atmosphere, even during peak 5:00 AM sessions.</p>
+			
+			<div class="spacer-80"></div>
+
+			<h3>The Jerai Edge: Built for the Indian Anatomy</h3>
+			<p>Our commitment to excellence led us to choose **Jerai Fitness** equipment exclusively. These machines are designed for the Indian anatomy, ensuring maximum effective load with minimum risk. This is why our gallery features transformations that result from safe, consistent, and bio-mechanically sound training protocols.</p>
+		</div>
+	</section>
+
+	<section class="section-padding bg-red text-center">
+		<div class="container">
+			<h2 class="text-white">Experience Our Facility in Person</h2>
+			<p class="mb-5 text-white opacity-9">Nothing beats the real thing. Visit COZ Fitness Ambattur for a free day pass and trial workout.</p>
+			<a href="/contact" class="btn btn-white">Book My Visit Today</a>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.page-header {
+		height: 60vh;
+		background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1593079831268-3381b0db4a77?auto=format&fit=crop&q=80&w=1470') center/cover;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+    .page-header h1 { font-size: 5rem; text-shadow: 0 4px 30px rgba(0,0,0,0.6); }
+
+    .tag {
+		background: var(--accent-color);
+		color: var(--primary-color);
+		padding: 0.6rem 1.2rem;
+		border-radius: 8px;
+		font-weight: 800;
+		text-transform: uppercase;
+		font-size: 0.8rem;
+		letter-spacing: 1.5px;
+	}
+
+    .intro-desc { font-size: 1.3rem; margin-top: 1.5rem; }
+
+	.gallery-masonry {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 3rem;
+	}
+
+	.gallery-card {
+		position: relative;
+		border-radius: 32px;
+		overflow: hidden;
+		height: 450px;
+		transition: var(--transition);
+		box-shadow: var(--shadow);
+        border: 1px solid var(--border-color);
+	}
+
+	.gallery-card img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+	}
+
+	.overlay {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		padding: 4rem 2.5rem 2rem;
+		background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+		color: #fff;
+		transform: translateY(20px);
+		opacity: 0;
+		transition: var(--transition);
+	}
+
+	.gallery-card:hover img { transform: scale(1.1); }
+	.gallery-card:hover .overlay { transform: translateY(0); opacity: 1; }
+
+	.gallery-card h3 { font-size: 1.5rem; font-weight: 900; margin-bottom: 0; color: #fff !important; }
+
+    .seo-long-form {
+        max-width: 950px;
+        margin: 0 auto;
+    }
+
+    .seo-long-form p { font-size: 1.3rem; line-height: 2; margin-bottom: 2rem; }
+
+	.opacity-9 { opacity: 0.9; }
+    .mt-4 { margin-top: 2rem; }
+    .mt-5 { margin-top: 4.5rem; }
+    .spacer-80 { height: 80px; }
+
+	@media (max-width: 992px) {
+		.page-header { height: auto; padding: 12rem 0 8rem; text-align: center; }
+        .page-header h1 { font-size: 3.5rem; }
+		.gallery-masonry { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+	}
+
+    @media (max-width: 576px) {
+        .page-header h1 { font-size: 2.75rem; }
+        .gallery-masonry { grid-template-columns: 1fr; }
+        .gallery-card { height: 350px; }
+    }
+</style>
