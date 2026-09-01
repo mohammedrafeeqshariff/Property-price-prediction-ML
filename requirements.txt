@@ -2,3 +2,13 @@ pandas
 scikit-learn
 streamlit
 joblib
+langchain
+langchain-core
+langchain-community
+langchain-openai
+langchain-ollama
+langchain-huggingface
+chromadb
+sentence-transformers
+python-dotenv
+pydantic
